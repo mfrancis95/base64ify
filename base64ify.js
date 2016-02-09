@@ -37,5 +37,3 @@ function base64ifyCSS(css, blacklist) {
         }
     });
 }
-
-console.log(base64ifyCSS(fs.readFileSync("test.css").toString()));
