@@ -6,7 +6,7 @@ var urlRegex = /url\(.*(?=\))/g;
 
 function base64ifyHTML(html, blacklist) {
     blacklist = (blacklist || []).map(mime.lookup);
-    return html.replace(srcRegex, function(match) {
+    return html.replace(srcRegex, match => {
         try {
             var file = match.slice(5);
             var mimeType = mime.lookup(file);
@@ -23,7 +23,7 @@ function base64ifyHTML(html, blacklist) {
 
 function base64ifyCSS(css, blacklist) {
     blacklist = (blacklist || []).map(mime.lookup);
-    return css.replace(urlRegex, function(match) {
+    return css.replace(urlRegex, match => {
         try {
             var file = match.slice(4);
             var mimeType = mime.lookup(file);
