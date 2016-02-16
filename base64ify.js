@@ -1,8 +1,8 @@
 var mime = require("mime-types");
 var fs = require("fs");
 
-var srcRegex = /src=('|").*(?='|")/g;
-var urlRegex = /url\(.*(?=\))/g;
+var srcRegex = /src=['"].*(?='|")/g;
+var urlRegex = /url\(.*(?=\))/g
 
 function base64ifyHTML(html, blacklist) {
     blacklist = (blacklist || []).map(mime.lookup);
@@ -37,3 +37,5 @@ function base64ifyCSS(css, blacklist) {
         }
     });
 }
+
+
