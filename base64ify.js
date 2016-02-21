@@ -38,4 +38,5 @@ function base64ifyCSS(css, blacklist) {
     });
 }
 
-
+module.exports.html = base64ifyHTML;
+module.exports.css = base64ifyCSS;
