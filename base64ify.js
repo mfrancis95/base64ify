@@ -13,7 +13,7 @@ function base64ifyHTML(html, blacklist) {
             if (blacklist.indexOf(mimeType) >= 0) {
                 return match;
             }
-            return "src=" + match[4] + "data:" + mimeType + ";base64," + fs.readFileSync(file).toString("base64");
+            return `src=${match[4]}data:${mimeType};base64,${fs.readFileSync(file).toString("base64")}`;
         }
         catch (e) {
             return match;
@@ -30,7 +30,7 @@ function base64ifyCSS(css, blacklist) {
             if (blacklist.indexOf(mimeType) >= 0) {
                 return match;
             }
-            return "url(data:" + mimeType + ";base64," + fs.readFileSync(file).toString("base64");
+            return `url(data:${mimeType};base64,${fs.readFileSync(file).toString("base64")}`;
         }
         catch (e) {
             return match;
