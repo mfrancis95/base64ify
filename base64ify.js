@@ -2,7 +2,7 @@ var mime = require("mime-types");
 var fs = require("fs");
 
 var srcRegex = /src=['"].*(?='|")/g;
-var urlRegex = /url\(.*(?=\))/g
+var urlRegex = /url\(.*(?=\))/g;
 
 function base64ifyHTML(html, blacklist) {
     blacklist = (blacklist || []).map(mime.lookup);
@@ -38,5 +38,5 @@ function base64ifyCSS(css, blacklist) {
     });
 }
 
-module.exports.html = base64ifyHTML;
-module.exports.css = base64ifyCSS;
+exports.html = base64ifyHTML;
+exports.css = base64ifyCSS;
